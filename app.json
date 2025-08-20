@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "PersonalShopperMVP",
+    "slug": "PersonalShopperMVP",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "We use your location to show nearby stores relevant to your shopping preferences.",
+        "NSPhotoLibraryUsageDescription": "We need access to your photo library to add items to your wardrobe.",
+        "NSCameraUsageDescription": "We need access to your camera to take photos of items for your wardrobe."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cbb87a37-0ac2-451a-b468-ca7d011822c"
+      }
+    }
+  }
+}
