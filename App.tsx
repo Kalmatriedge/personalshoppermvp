@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
+import { Button } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider as PaperProvider } from 'react-native-paper';
 
@@ -22,8 +23,24 @@ const Tab = createBottomTabNavigator();
 function Tabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Wardrobe" component={WardrobeScreen} />
+      <Tab.Screen
+        name="Map"
+        component={MapScreen}
+        options={({ navigation }) => ({
+          headerRight: () => (
+            <Button title="Byt" onPress={() => navigation.navigate('Onboarding' as never)} />
+          ),
+        })}
+      />
+      <Tab.Screen
+        name="Wardrobe"
+        component={WardrobeScreen}
+        options={({ navigation }) => ({
+          headerRight: () => (
+            <Button title="Byt" onPress={() => navigation.navigate('Onboarding' as never)} />
+          ),
+        })}
+      />
     </Tab.Navigator>
   );
 }
@@ -48,10 +65,8 @@ export default function App() {
     <PaperProvider>
       <SafeAreaProvider>
         <NavigationContainer>
-          <Stack.Navigator>
-            {showOnboarding ? (
-              <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{ headerShown: false }} />
-            ) : null}
+          <Stack.Navigator initialRouteName={showOnboarding ? 'Onboarding' : 'Tabs'}>
+            <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
           </Stack.Navigator>
           <StatusBar style="auto" />

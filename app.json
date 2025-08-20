@@ -18,7 +18,8 @@
         "NSLocationWhenInUseUsageDescription": "We use your location to show nearby stores relevant to your shopping preferences.",
         "NSPhotoLibraryUsageDescription": "We need access to your photo library to add items to your wardrobe.",
         "NSCameraUsageDescription": "We need access to your camera to take photos of items for your wardrobe."
-      }
+      },
+      "bundleIdentifier": "com.kalmatriedge.PersonalShopperMVP"
     },
     "android": {
       "adaptiveIcon": {
